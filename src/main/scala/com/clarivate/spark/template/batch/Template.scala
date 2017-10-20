@@ -3,7 +3,6 @@ package com.clarivate.spark.template.batch
 import org.apache.spark.sql.functions._
 import org.apache.log4j.{Level, LogManager, Logger}
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.implicits._
 
 object Main {
   def main(args: Array[String]) = {
