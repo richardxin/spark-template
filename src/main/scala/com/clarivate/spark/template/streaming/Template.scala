@@ -8,7 +8,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object Template {
   def main(args: Array[String]): Unit = {
-    val sc = SparkUtils.getSparkContext("Logs lambda speed")
+    val sc = SparkUtils.getSparkContext("test")
 
     implicit val sqlContext = SparkUtils.getSQLContext(sc)
 
@@ -16,6 +16,8 @@ object Template {
     implicit val ssc = new StreamingContext(sc, batchDuration)
 
     val job = new StreamingJob()
+
+    job.process()
 
     ssc.start()
     ssc.awaitTermination()
