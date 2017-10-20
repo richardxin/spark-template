@@ -1,6 +1,5 @@
 package com.clarivate.spark.template.streaming
 
-import com.clarivate.spark.template.utils.SparkUtils
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 import org.apache.spark.streaming.kafka010.KafkaUtils
@@ -14,7 +13,7 @@ object Template1 {
 
     val sc = SparkContext.getOrCreate(conf)
 
-    implicit val sqlContext = SparkUtils.getSQLContext(sc)
+    //implicit val sqlContext = SparkUtils.getSQLContext(sc)
 
     val batchDuration = Seconds(5)
     implicit val ssc = new StreamingContext(sc, batchDuration)
