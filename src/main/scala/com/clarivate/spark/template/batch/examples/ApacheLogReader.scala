@@ -1,8 +1,7 @@
-package com.clarivate.spark.template.batch
+package com.clarivate.spark.template.batch.examples
 
 import java.util.regex.Pattern
-import org.apache.spark.sql.functions._
-import org.apache.log4j.{Level, LogManager, Logger}
+
 import org.apache.spark.sql.SparkSession
 
 object ApacheLogReader {
@@ -23,7 +22,7 @@ object ApacheLogReader {
       .getOrCreate()
     val sc = spark.sparkContext
     sc.setLogLevel("WARN")
-    val sqlContext = spark.sqlContext
+    //val sqlContext = spark.sqlContext
     val applicationId = sc.applicationId
     println("Application started with id : " + applicationId)
 

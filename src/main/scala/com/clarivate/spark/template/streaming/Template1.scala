@@ -18,7 +18,7 @@ object Template1 {
     val batchDuration = Seconds(5)
     implicit val ssc = new StreamingContext(sc, batchDuration)
 
-    private val kafkaParams = Map(
+    val kafkaParams = Map(
       "metadata.broker.list" -> "Settings.Kafka.broker",  //TODO
       "group.id" -> "Settings.Kafka.groupId", //TODO
       "auto.offset.reset" -> "latest" //TODO

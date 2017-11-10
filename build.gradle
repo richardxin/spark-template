@@ -67,6 +67,8 @@ task run(type: JavaExec, dependsOn: classes) {
     classpath configurations.runtime
 }
 
+run.onlyIf { !project.hasProperty('skipRun') }   //gradle run -PskipRun
+
 jar {
     classifier = 'all'
     manifest {
